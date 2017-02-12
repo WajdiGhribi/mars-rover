@@ -21,7 +21,7 @@ public class GeographicalCoordinate implements Coordinate {
 		return x;
 	}
 
-	public int getY() {
+	public int getY() {		
 		return y;
 	}
 
@@ -37,7 +37,10 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveForwardY() {
-		y++;
+		if(y < surface.getSize())
+			y++;
+		else
+			y = 0;
 		
 	}
 
