@@ -2,8 +2,10 @@ package com.talan.kata;
 
 public interface Direction {
 
-	Direction turnRight();
+	public Direction turnRight();
 
-	Direction turnLeft();
+	public Direction turnLeft();
+
+	public void moveForward();
 
 }

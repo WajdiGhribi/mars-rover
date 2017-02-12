@@ -74,4 +74,12 @@ public class DirectionTest {
 		Direction newDirection = direction.turnLeft();
 		assertThat(newDirection).isInstanceOf(North.class);		
 	}
+	
+	@Test
+	public void directionShouldIncrementYWhenEastAndMoveForward(){
+		Direction direction = new East(coordinate);
+		direction.moveForward();
+		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getY()).isEqualTo(1);
+	}
 }

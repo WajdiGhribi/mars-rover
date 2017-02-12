@@ -15,4 +15,9 @@ public class South implements Direction {
 		return new East(coordinate);
 	}
 
+	public void moveForward() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

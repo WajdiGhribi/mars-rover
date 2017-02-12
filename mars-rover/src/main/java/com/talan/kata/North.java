@@ -15,5 +15,10 @@ public class North implements Direction {
 	public Direction turnLeft() {
 		return new West(coordinate);
 	}
+
+	public void moveForward() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
