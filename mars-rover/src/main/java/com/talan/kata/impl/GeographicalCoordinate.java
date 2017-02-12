@@ -33,7 +33,10 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveBackwardX() {
-		x--;		
+		if(x > 0)
+			x--;
+		else
+			x = surface.getSize();
 	}
 
 	public void moveForwardY() {
