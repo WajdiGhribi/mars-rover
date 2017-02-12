@@ -58,10 +58,10 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveBackwardY() {
+		int destination = surface.getSize();
 		if(y > 0)
-			y--;
-		else
-			y = surface.getSize();
+			destination = y - 1;
+		setY(destination);
 	}
 	
 }

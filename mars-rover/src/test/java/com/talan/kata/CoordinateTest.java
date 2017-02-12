@@ -80,4 +80,13 @@ public class CoordinateTest {
 		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
+	
+	@Test
+	public void coordinateShouldNotMoveWhenFacingObstacleInYAxisAndMoveBackward(){
+		obstacles.add(new Obstacle(0, surface.getSize()));
+		surface.setObstacles(obstacles);
+		coordinate.moveBackwardY();
+		assertThat(coordinate.getX()).isEqualTo(0);
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }
