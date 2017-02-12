@@ -16,6 +16,13 @@ public class Rover {
 			Forward();
 		else if (command.equals("b"))
 			BackWard();
+		else if (command.equals("l"))
+			turnLeft();
+	}
+
+	private void turnLeft() {
+		direction = direction.turnLeft();
+		
 	}
 
 	private void BackWard() {
