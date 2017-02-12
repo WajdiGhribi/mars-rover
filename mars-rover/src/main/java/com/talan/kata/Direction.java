@@ -4,4 +4,6 @@ public interface Direction {
 
 	Direction turnRight();
 
+	Direction turnLeft();
+
 }

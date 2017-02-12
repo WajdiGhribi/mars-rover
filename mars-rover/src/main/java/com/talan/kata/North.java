@@ -11,5 +11,9 @@ public class North implements Direction {
 	public Direction turnRight() {
 		return new East(coordinate);
 	}
+
+	public Direction turnLeft() {
+		return new West(coordinate);
+	}
 	
 }

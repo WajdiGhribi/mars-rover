@@ -12,4 +12,9 @@ public class West implements Direction {
 		return new North(coordinate);
 	}
 
+	public Direction turnLeft() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

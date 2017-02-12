@@ -11,4 +11,9 @@ public class South implements Direction {
 		return new West(coordinate);
 	}
 
+	public Direction turnLeft() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

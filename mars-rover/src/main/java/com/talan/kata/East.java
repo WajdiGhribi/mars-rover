@@ -12,4 +12,9 @@ public class East implements Direction {
 		return new South(coordinate);
 	}
 
+	public Direction turnLeft() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
