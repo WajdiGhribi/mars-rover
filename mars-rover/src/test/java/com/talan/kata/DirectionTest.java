@@ -133,4 +133,13 @@ public class DirectionTest {
 		assertThat(coordinate.getX()).isEqualTo(1);		
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
+	
+	@Test
+	public void directionShouldDecrementXWhenWestAndMoveForward(){
+		Direction direction = new West(coordinate);
+		direction.moveForward();
+		direction.moveBackward();
+		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }

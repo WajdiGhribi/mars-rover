@@ -17,8 +17,7 @@ public class West implements Direction {
 	}
 
 	public void moveForward() {
-		// TODO Auto-generated method stub
-		
+		coordinate.moveBackwardX();		
 	}
 
 	public void moveBackward() {
