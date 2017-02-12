@@ -116,4 +116,13 @@ public class DirectionTest {
 		assertThat(coordinate.getX()).isEqualTo(0);		
 		assertThat(coordinate.getY()).isEqualTo(1);
 	}
+	
+	@Test
+	public void directionShouldDecrementYWhenSouthAndMoveForward(){
+		Direction direction = new South(coordinate);
+		direction.moveForward();
+		direction.moveBackward();
+		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }

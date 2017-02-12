@@ -16,8 +16,7 @@ public class South implements Direction {
 	}
 
 	public void moveForward() {
-		// TODO Auto-generated method stub
-		
+		coordinate.moveBackwardY();		
 	}
 
 	public void moveBackward() {
