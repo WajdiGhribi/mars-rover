@@ -8,8 +8,8 @@ public interface Coordinate {
 
 	public int getY();
 
-	public void moveForwardY();
+	public void moveForwardX();
 
-	public void moveBackwardY();
+	public void moveBackwardX();
 
 }

@@ -17,12 +17,12 @@ public class East implements Direction {
 	}
 
 	public void moveForward() {
-		coordinate.moveForwardY();
+		coordinate.moveForwardX();
 		
 	}
 
 	public void moveBackward() {
-		coordinate.moveBackwardY();		
+		coordinate.moveBackwardX();		
 	}
 
 }

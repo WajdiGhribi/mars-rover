@@ -76,15 +76,15 @@ public class DirectionTest {
 	}
 	
 	@Test
-	public void directionShouldIncrementYWhenEastAndMoveForward(){
+	public void directionShouldIncrementXWhenEastAndMoveForward(){
 		Direction direction = new East(coordinate);
 		direction.moveForward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
-		assertThat(coordinate.getY()).isEqualTo(1);
+		assertThat(coordinate.getX()).isEqualTo(1);		
+		assertThat(coordinate.getY()).isEqualTo(0);
 	}
 	
 	@Test
-	public void directionShoulddecrementYWhenEastAndMoveBackward(){
+	public void directionShoulddecrementXWhenEastAndMoveBackward(){
 		Direction direction = new East(coordinate);
 		direction.moveForward();
 		direction.moveBackward();

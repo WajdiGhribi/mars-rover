@@ -20,12 +20,12 @@ public class GeographicalCoordinate implements Coordinate {
 		return y;
 	}
 
-	public void moveForwardY() {
-		y++;
+	public void moveForwardX() {
+		x++;
 	}
 
-	public void moveBackwardY() {
-		y--;		
+	public void moveBackwardX() {
+		x--;		
 	}
 	
 }
