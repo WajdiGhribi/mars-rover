@@ -11,9 +11,14 @@ public class Rover {
 		return direction;
 	}
 
-	public void execute(String string) {
+	public void execute(String command) {
+		if (command.equals("f"))
+			Forward();
+	}
+
+	private void Forward() {
+		direction.moveForward();
 		
-		//direction.moveBackward();
 	}
 		
 }
