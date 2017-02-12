@@ -26,4 +26,7 @@ public class South implements Direction {
 		coordinate.moveForwardY();	
 	}
 
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
 }

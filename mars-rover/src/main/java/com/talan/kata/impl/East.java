@@ -7,6 +7,10 @@ public class East implements Direction {
 	
 	private Coordinate coordinate;
 	
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
+
 	public East(Coordinate coordinate) {
 		this.coordinate = coordinate;
 	}

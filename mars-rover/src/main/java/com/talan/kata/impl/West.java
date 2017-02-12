@@ -27,4 +27,7 @@ public class West implements Direction {
 		coordinate.moveForwardX();
 	}
 
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
 }

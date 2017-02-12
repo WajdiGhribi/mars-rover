@@ -27,4 +27,7 @@ public class North implements Direction {
 		coordinate.moveBackwardY();		
 	}
 	
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
 }
