@@ -14,6 +14,13 @@ public class Rover {
 	public void execute(String command) {
 		if (command.equals("f"))
 			Forward();
+		else if (command.equals("b"))
+			BackWard();
+	}
+
+	private void BackWard() {
+		direction.moveBackward();
+		
 	}
 
 	private void Forward() {

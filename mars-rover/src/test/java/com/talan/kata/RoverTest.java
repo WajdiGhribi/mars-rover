@@ -39,4 +39,13 @@ public class RoverTest {
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 	}
+	
+	@Test
+	public void roverShouldMoveBackwardByOneStepWhenReceiveBAndDirectionNorth(){
+		Coordinate expectedCoordinate = new GeographicalCoordinate(0, surface.getSize(), surface);
+		Rover rover = new Rover(initialDirection);
+		rover.execute("b");
+		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
+		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
+	}
 }
