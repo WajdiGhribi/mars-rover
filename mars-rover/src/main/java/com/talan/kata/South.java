@@ -20,4 +20,9 @@ public class South implements Direction {
 		
 	}
 
+	public void moveBackward() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -8,4 +8,6 @@ public interface Direction {
 
 	public void moveForward();
 
+	public void moveBackward();
+
 }

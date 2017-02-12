@@ -23,5 +23,9 @@ public class GeographicalCoordinate implements Coordinate {
 	public void moveForwardY() {
 		y++;
 	}
+
+	public void moveBackwardY() {
+		y--;		
+	}
 	
 }

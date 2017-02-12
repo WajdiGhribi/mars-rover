@@ -10,4 +10,6 @@ public interface Coordinate {
 
 	public void moveForwardY();
 
+	public void moveBackwardY();
+
 }

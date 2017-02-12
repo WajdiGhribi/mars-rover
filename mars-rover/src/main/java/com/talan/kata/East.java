@@ -21,4 +21,8 @@ public class East implements Direction {
 		
 	}
 
+	public void moveBackward() {
+		coordinate.moveBackwardY();		
+	}
+
 }

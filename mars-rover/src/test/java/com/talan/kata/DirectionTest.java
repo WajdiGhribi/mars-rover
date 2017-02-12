@@ -82,4 +82,13 @@ public class DirectionTest {
 		assertThat(coordinate.getX()).isEqualTo(0);		
 		assertThat(coordinate.getY()).isEqualTo(1);
 	}
+	
+	@Test
+	public void directionShoulddecrementYWhenEastAndMoveBackward(){
+		Direction direction = new East(coordinate);
+		direction.moveForward();
+		direction.moveBackward();
+		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }

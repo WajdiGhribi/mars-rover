@@ -20,5 +20,10 @@ public class North implements Direction {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void moveBackward() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
