@@ -17,13 +17,11 @@ public class North implements Direction {
 	}
 
 	public void moveForward() {
-		coordinate.moveforwardY();
-		
+		coordinate.moveForwardY();		
 	}
 
 	public void moveBackward() {
-		// TODO Auto-generated method stub
-		
+		coordinate.moveBackwardY();		
 	}
 	
 }

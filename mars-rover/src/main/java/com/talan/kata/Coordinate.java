@@ -12,6 +12,8 @@ public interface Coordinate {
 
 	public void moveBackwardX();
 
-	public void moveforwardY();
+	public void moveForwardY();
+	
+	public void moveBackwardY();
 
 }
