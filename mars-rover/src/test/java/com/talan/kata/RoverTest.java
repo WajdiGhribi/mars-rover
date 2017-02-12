@@ -3,6 +3,7 @@ package com.talan.kata;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.talan.kata.impl.East;
 import com.talan.kata.impl.GeographicalCoordinate;
 import com.talan.kata.impl.MarsSurface;
 import com.talan.kata.impl.North;
@@ -58,5 +59,15 @@ public class RoverTest {
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 		assertThat(rover.getDirection()).isInstanceOf(West.class);
+	}
+	
+	@Test
+	public void roverShouldNotMoveAndDirectionEastWhenReceiveRAndDirectionNorth(){
+		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
+		Rover rover = new Rover(initialDirection);
+		rover.execute("r");
+		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
+		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
+		assertThat(rover.getDirection()).isInstanceOf(East.class);
 	}
 }
