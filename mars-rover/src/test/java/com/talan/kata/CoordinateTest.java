@@ -71,4 +71,13 @@ public class CoordinateTest {
 		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
+	
+	@Test
+	public void coordinateShouldNotMoveWhenFacingObstacleInXAxisAndMoveBackward(){
+		obstacles.add(new Obstacle(surface.getSize(), 0));
+		surface.setObstacles(obstacles);
+		coordinate.moveBackwardX();
+		assertThat(coordinate.getX()).isEqualTo(0);
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }

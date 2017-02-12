@@ -43,10 +43,10 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveBackwardX() {
+		int destination = surface.getSize();
 		if(x > 0)
-			x--;
-		else
-			x = surface.getSize();
+			destination = x - 1;
+		setX(destination);
 	}
 
 	public void moveForwardY() {
