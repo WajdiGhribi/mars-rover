@@ -125,4 +125,12 @@ public class DirectionTest {
 		assertThat(coordinate.getX()).isEqualTo(0);		
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
+	
+	@Test
+	public void directionShouldIncrementXWhenWestAndMoveBackward(){
+		Direction direction = new West(coordinate);
+		direction.moveBackward();
+		assertThat(coordinate.getX()).isEqualTo(1);		
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }
