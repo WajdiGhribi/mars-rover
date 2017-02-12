@@ -67,4 +67,11 @@ public class DirectionTest {
 		Direction newDirection = direction.turnLeft();
 		assertThat(newDirection).isInstanceOf(East.class);		
 	}
+	
+	@Test
+	public void directionShouldBeNorthWhenEastAndTurnLeft(){
+		Direction direction = new East(coordinate);
+		Direction newDirection = direction.turnLeft();
+		assertThat(newDirection).isInstanceOf(North.class);		
+	}
 }
