@@ -1,4 +1,7 @@
-package com.talan.kata;
+package com.talan.kata.impl;
+
+import com.talan.kata.Coordinate;
+import com.talan.kata.Direction;
 
 public class South implements Direction {
 	private Coordinate coordinate;

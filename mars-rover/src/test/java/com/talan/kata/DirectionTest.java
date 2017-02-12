@@ -5,6 +5,14 @@ package com.talan.kata;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.talan.kata.impl.East;
+import com.talan.kata.impl.GeographicalCoordinate;
+import com.talan.kata.impl.MarsSurface;
+import com.talan.kata.impl.North;
+import com.talan.kata.impl.South;
+import com.talan.kata.impl.West;
+
 import static org.assertj.core.api.Assertions.*;
 /**
  * @author wajdi
@@ -16,7 +24,8 @@ public class DirectionTest {
 	
 	@Before
 	public void beforeDirectionTest(){
-		coordinate = new GeographicalCoordinate(0 , 0);
+		Surface surface = new MarsSurface(5);
+		coordinate = new GeographicalCoordinate(0 , 0, surface);
 	}
 	
 	@Test
