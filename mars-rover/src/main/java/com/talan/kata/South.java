@@ -8,8 +8,7 @@ public class South implements Direction {
 	}
 
 	public Direction turnRight() {
-		// TODO Auto-generated method stub
-		return null;
+		return new West(coordinate);
 	}
 
 }

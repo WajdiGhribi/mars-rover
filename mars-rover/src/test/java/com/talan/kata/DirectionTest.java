@@ -39,4 +39,11 @@ public class DirectionTest {
 		Direction newDirection = direction.turnRight();
 		assertThat(newDirection).isInstanceOf(West.class);		
 	}
+	
+	@Test
+	public void directionShouldBeNorthWhenWestAndTurnRight(){
+		Direction direction = new West(coordinate);
+		Direction newDirection = direction.turnRight();
+		assertThat(newDirection).isInstanceOf(North.class);		
+	}
 }
