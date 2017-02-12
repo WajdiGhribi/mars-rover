@@ -48,7 +48,10 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveBackwardY() {
-		y--;		
+		if(y > 0)
+			y--;
+		else
+			y = surface.getSize();
 	}
 	
 }
