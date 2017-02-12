@@ -37,8 +37,9 @@ public class GeographicalCoordinate implements Coordinate {
 			this.x = destination;
 	}
 
-	public void setY(int y) {
-		this.y = y;
+	public void setY(int destination) {
+		if(!surface.isCollision(x , destination))
+			this.y = destination;
 	}
 
 	public void moveBackwardX() {
@@ -49,10 +50,10 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveForwardY() {
+		int destination = 0;
 		if(y < surface.getSize())
-			y++;
-		else
-			y = 0;
+			destination = y + 1;
+		setY(destination);
 		
 	}
 

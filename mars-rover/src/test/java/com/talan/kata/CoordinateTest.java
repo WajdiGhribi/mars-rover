@@ -62,4 +62,13 @@ public class CoordinateTest {
 		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
+	
+	@Test
+	public void coordinateShouldNotMoveWhenFacingObstacleInYAxis(){
+		obstacles.add(new Obstacle(0, 1));
+		surface.setObstacles(obstacles);
+		coordinate.moveForwardY();
+		assertThat(coordinate.getX()).isEqualTo(0);
+		assertThat(coordinate.getY()).isEqualTo(0);
+	}
 }
