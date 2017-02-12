@@ -26,10 +26,19 @@ public class GeographicalCoordinate implements Coordinate {
 	}
 
 	public void moveForwardX() {
+		int destination = 0;
 		if(x < surface.getSize())
-			x++;
-		else
-			x = 0;
+			destination = x + 1;
+		setX(destination);
+	}
+
+	public void setX(int destination) {
+		if(!surface.isCollision(destination , y))
+			this.x = destination;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	public void moveBackwardX() {
