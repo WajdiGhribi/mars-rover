@@ -27,5 +27,10 @@ public class GeographicalCoordinate implements Coordinate {
 	public void moveBackwardX() {
 		x--;		
 	}
+
+	public void moveforwardY() {
+		y++;
+		
+	}
 	
 }

@@ -17,7 +17,7 @@ public class North implements Direction {
 	}
 
 	public void moveForward() {
-		// TODO Auto-generated method stub
+		coordinate.moveforwardY();
 		
 	}
 
