@@ -19,8 +19,8 @@ public class West implements Direction {
 		return new South(coordinate);
 	}
 
-	public void moveForward() {
-		coordinate.moveBackwardX();		
+	public boolean moveForward() {
+		return coordinate.moveBackwardX();		
 	}
 
 	public void moveBackward() {

@@ -12,14 +12,19 @@ public class Rover {
 	}
 
 	public void execute(String command) {
-		if (command.equals("f"))
-			Forward();
-		else if (command.equals("b"))
-			BackWard();
-		else if (command.equals("l"))
-			turnLeft();
-		else if (command.equals("r"))
-			turnRight();
+		 for (char cmd : command.toCharArray()) {
+				if (cmd == 'f'){
+					if(!Forward())
+						break;
+				}
+				else if (cmd == 'b')
+					BackWard();
+				else if (cmd == 'l')
+					turnLeft();
+				else if (cmd == 'r')
+					turnRight();
+		 }
+
 	}
 
 	private void turnRight() {
@@ -37,8 +42,8 @@ public class Rover {
 		
 	}
 
-	private void Forward() {
-		direction.moveForward();
+	private boolean Forward() {
+		return direction.moveForward();
 		
 	}
 		

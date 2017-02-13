@@ -23,8 +23,8 @@ public class East implements Direction {
 		return new North(coordinate);
 	}
 
-	public void moveForward() {
-		coordinate.moveForwardX();
+	public boolean moveForward() {
+		return coordinate.moveForwardX();
 		
 	}
 

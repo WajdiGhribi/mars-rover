@@ -8,12 +8,12 @@ public interface Coordinate {
 
 	public int getY();
 
-	public void moveForwardX();
+	public boolean moveForwardX();
 
-	public void moveBackwardX();
+	public boolean moveBackwardX();
 
-	public void moveForwardY();
+	public boolean moveForwardY();
 	
-	public void moveBackwardY();
+	public boolean moveBackwardY();
 
 }

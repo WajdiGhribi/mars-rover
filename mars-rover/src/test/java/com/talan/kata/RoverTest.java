@@ -7,15 +7,20 @@ import com.talan.kata.impl.East;
 import com.talan.kata.impl.GeographicalCoordinate;
 import com.talan.kata.impl.MarsSurface;
 import com.talan.kata.impl.North;
+import com.talan.kata.impl.Obstacle;
 import com.talan.kata.impl.West;
 
 import static org.assertj.core.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RoverTest {
 
 	private Surface surface;
 	private Coordinate coordinate;
 	private Direction initialDirection;
+	private List<Obstacle> obstacles = new ArrayList();
 	
 	@Before
 	public void BeforeRoverTest(){
@@ -70,4 +75,17 @@ public class RoverTest {
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 		assertThat(rover.getDirection()).isInstanceOf(East.class);
 	}
+	
+	@Test
+	public void roverShouldNotMoveAndMaintainDirectionAndCoordinateWhenDetectObstacle(){
+		obstacles.add(new Obstacle(0 , 1));
+		surface.setObstacles(obstacles);
+		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
+		Rover rover = new Rover(initialDirection);
+		rover.execute("ffrf");
+		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
+		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
+		assertThat(rover.getDirection()).isInstanceOf(North.class);
+	}
+	
 }

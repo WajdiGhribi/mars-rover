@@ -18,8 +18,8 @@ public class South implements Direction {
 		return new East(coordinate);
 	}
 
-	public void moveForward() {
-		coordinate.moveBackwardY();		
+	public boolean moveForward() {
+		return coordinate.moveBackwardY();		
 	}
 
 	public void moveBackward() {

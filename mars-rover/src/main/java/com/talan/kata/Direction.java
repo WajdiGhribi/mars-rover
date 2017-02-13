@@ -8,7 +8,7 @@ public interface Direction {
 
 	public Direction turnLeft();
 
-	public void moveForward();
+	public boolean moveForward();
 
 	public void moveBackward();
 
