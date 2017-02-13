@@ -9,6 +9,7 @@ public class Obstacle {
 		this.x = x;
 		this.y = y;
 	}
+
 	public int getX() {
 		return x;
 	}
@@ -21,5 +22,14 @@ public class Obstacle {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Obstacle [x=");
+		builder.append(x);
+		builder.append(", y=");
+		builder.append(y);
+		builder.append("]");
+		return builder.toString();
+	}
 }

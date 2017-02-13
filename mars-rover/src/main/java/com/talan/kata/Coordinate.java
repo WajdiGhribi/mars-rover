@@ -15,5 +15,7 @@ public interface Coordinate {
 	public boolean moveForwardY();
 	
 	public boolean moveBackwardY();
+	
+	public String report();
 
 }

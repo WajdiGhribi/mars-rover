@@ -30,4 +30,14 @@ public class North implements Direction {
 	public Coordinate getCoordinate() {
 		return coordinate;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Facing North ");
+		sb.append("\n");
+		sb.append(coordinate.report());
+
+		return sb.toString();
+	}
 }

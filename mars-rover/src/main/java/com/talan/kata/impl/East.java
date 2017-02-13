@@ -32,4 +32,13 @@ public class East implements Direction {
 		return coordinate.moveBackwardX();		
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Facing East ");
+		sb.append("\n");
+		sb.append(coordinate.report());
+
+		return sb.toString();
+	}
 }

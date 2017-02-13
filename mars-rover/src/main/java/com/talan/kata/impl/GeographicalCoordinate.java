@@ -9,8 +9,10 @@ public class GeographicalCoordinate implements Coordinate {
 	
 	private int x;
 	private int y;
+
 	private Surface surface;
 	private boolean clearToGo = true;
+	private String obstacleLocation;
 	
 	public GeographicalCoordinate(int x, int y, Surface surface) {
 		this.x = x;
@@ -71,6 +73,22 @@ public class GeographicalCoordinate implements Coordinate {
 			destination = y - 1;
 		setY(destination);
 		return clearToGo;
+	}
+
+	@Override
+	public String report() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Rover Coordinates [x= ");
+		sb.append(x);
+		sb.append(" , y= ");
+		sb.append(y);
+		sb.append(" ]");
+		sb.append("\n");
+		if(!clearToGo){
+			sb.append("Found " );
+			sb.append(surface.getEncounteredObstacle().get().toString() );
+		}
+		return sb.toString();
 	}
 	
 }

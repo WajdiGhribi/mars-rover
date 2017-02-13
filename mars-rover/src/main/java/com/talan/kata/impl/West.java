@@ -30,4 +30,14 @@ public class West implements Direction {
 	public Coordinate getCoordinate() {
 		return coordinate;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Facing West ");
+		sb.append("\n");
+		sb.append(coordinate.report());
+
+		return sb.toString();
+	}
 }

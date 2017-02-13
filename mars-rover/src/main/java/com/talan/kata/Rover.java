@@ -26,6 +26,7 @@ public class Rover {
 				else if (cmd == 'r')
 					turnRight();
 		 }
+		 System.out.println(direction.toString());
 
 	}
 
@@ -48,5 +49,5 @@ public class Rover {
 		return direction.moveForward();
 		
 	}
-		
+			
 }

@@ -29,4 +29,14 @@ public class South implements Direction {
 	public Coordinate getCoordinate() {
 		return coordinate;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Facing South ");
+		sb.append("\n");
+		sb.append(coordinate.report());
+
+		return sb.toString();
+	}
 }
