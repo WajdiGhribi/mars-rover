@@ -22,43 +22,43 @@ public class RoverTest {
 	private Coordinate coordinate;
 	private Direction initialDirection;
 	private List<Obstacle> obstacles = new ArrayList();
-	
+
 	@Before
-	public void BeforeRoverTest(){
+	public void BeforeRoverTest() {
 		surface = new MarsSurface(3);
 		coordinate = new GeographicalCoordinate(0, 0, surface);
 		initialDirection = new North(coordinate);
 	}
-	
+
 	@Test
-	public void roverShouldNotMoveAndKeepDirectionWhenReceiveEmptyCommand(){
+	public void roverShouldNotMoveAndKeepDirectionWhenReceiveEmptyCommand() {
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("");
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 	}
-	
+
 	@Test
-	public void roverShouldMoveForwardByOneStepWhenReceiveFAndDirectionNorth(){
+	public void roverShouldMoveForwardByOneStepWhenReceiveFAndDirectionNorth() {
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 1, surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("f");
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 	}
-	
+
 	@Test
-	public void roverShouldMoveBackwardByOneStepWhenReceiveBAndDirectionNorth(){
+	public void roverShouldMoveBackwardByOneStepWhenReceiveBAndDirectionNorth() {
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, surface.getSize(), surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("b");
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 	}
-	
+
 	@Test
-	public void roverShouldNotMoveAndDirectionWestWhenReceiveLAndDirectionNorth(){
+	public void roverShouldNotMoveAndDirectionWestWhenReceiveLAndDirectionNorth() {
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("l");
@@ -66,9 +66,9 @@ public class RoverTest {
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 		assertThat(rover.getDirection()).isInstanceOf(West.class);
 	}
-	
+
 	@Test
-	public void roverShouldNotMoveAndDirectionEastWhenReceiveRAndDirectionNorth(){
+	public void roverShouldNotMoveAndDirectionEastWhenReceiveRAndDirectionNorth() {
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("r");
@@ -76,28 +76,28 @@ public class RoverTest {
 		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
 		assertThat(rover.getDirection()).isInstanceOf(East.class);
 	}
-	
+
 	@Test
-	public void roverShouldNotMoveAndMaintainDirectionAndCoordinateWhenDetectObstacle(){
-		obstacles.add(new Obstacle(0 , 1));
+	public void roverShouldNotMoveAndMaintainDirectionAndCoordinateWhenDetectObstacle() {
+		obstacles.add(new Obstacle(0, 1));
 		surface.setObstacles(obstacles);
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("ffrf");
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
-		assertThat(actualCoordinate).isEqualToIgnoringGivenFields(expectedCoordinate, "clearToGo");
+		assertThat(actualCoordinate).isEqualToComparingFieldByField(expectedCoordinate);
 		assertThat(rover.getDirection()).isInstanceOf(North.class);
 	}
-	
+
 	@Test
-	public void roverShouldNotMoveAndMaintainDirectionAndCoordinateWhenMoveBackwardAndDetectObstacle(){
-		obstacles.add(new Obstacle(0 , 1));
+	public void roverShouldNotMoveAndMaintainDirectionAndCoordinateWhenMoveBackwardAndDetectObstacle() {
+		obstacles.add(new Obstacle(0, 1));
 		surface.setObstacles(obstacles);
 		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
 		Rover rover = new Rover(initialDirection);
 		rover.execute("llb");
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
-		assertThat(actualCoordinate).isEqualToIgnoringGivenFields(expectedCoordinate, "clearToGo");
+		assertThat(actualCoordinate).isEqualToComparingFieldByField(expectedCoordinate);
 		assertThat(rover.getDirection()).isInstanceOf(South.class);
 	}
 }

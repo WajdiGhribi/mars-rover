@@ -1,7 +1,5 @@
 package com.talan.kata;
 
-import java.util.function.IntPredicate;
-
 public interface Direction {
 
 	public Direction turnRight();

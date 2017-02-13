@@ -13,4 +13,4 @@ public interface Surface {
 	public void setObstacles(List<Obstacle> obstacles);
 
 	Optional<Obstacle> getEncounteredObstacle();
-} 
+}

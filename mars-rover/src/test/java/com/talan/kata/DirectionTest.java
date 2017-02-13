@@ -14,141 +14,142 @@ import com.talan.kata.impl.South;
 import com.talan.kata.impl.West;
 
 import static org.assertj.core.api.Assertions.*;
+
 /**
  * @author wajdi
  *
  */
 public class DirectionTest {
-	
+
 	private Coordinate coordinate;
-	
+
 	@Before
-	public void beforeDirectionTest(){
+	public void beforeDirectionTest() {
 		Surface surface = new MarsSurface(5);
-		coordinate = new GeographicalCoordinate(0 , 0, surface);
+		coordinate = new GeographicalCoordinate(0, 0, surface);
 	}
-	
+
 	@Test
-	public void directionShouldBeEastWhenNorthAndTurnRight(){
+	public void directionShouldBeEastWhenNorthAndTurnRight() {
 		Direction direction = new North(coordinate);
 		Direction newDirection = direction.turnRight();
-		assertThat(newDirection).isInstanceOf(East.class);		
+		assertThat(newDirection).isInstanceOf(East.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeSouthWhenEastAndTurnRight(){
+	public void directionShouldBeSouthWhenEastAndTurnRight() {
 		Direction direction = new East(coordinate);
 		Direction newDirection = direction.turnRight();
-		assertThat(newDirection).isInstanceOf(South.class);		
+		assertThat(newDirection).isInstanceOf(South.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeWestWhenSouthAndTurnRight(){
+	public void directionShouldBeWestWhenSouthAndTurnRight() {
 		Direction direction = new South(coordinate);
 		Direction newDirection = direction.turnRight();
-		assertThat(newDirection).isInstanceOf(West.class);		
+		assertThat(newDirection).isInstanceOf(West.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeNorthWhenWestAndTurnRight(){
+	public void directionShouldBeNorthWhenWestAndTurnRight() {
 		Direction direction = new West(coordinate);
 		Direction newDirection = direction.turnRight();
-		assertThat(newDirection).isInstanceOf(North.class);		
+		assertThat(newDirection).isInstanceOf(North.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeWestWhenNorthAndTurnLeft(){
+	public void directionShouldBeWestWhenNorthAndTurnLeft() {
 		Direction direction = new North(coordinate);
 		Direction newDirection = direction.turnLeft();
-		assertThat(newDirection).isInstanceOf(West.class);		
+		assertThat(newDirection).isInstanceOf(West.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeSouthWhenWestAndTurnLeft(){
+	public void directionShouldBeSouthWhenWestAndTurnLeft() {
 		Direction direction = new West(coordinate);
 		Direction newDirection = direction.turnLeft();
-		assertThat(newDirection).isInstanceOf(South.class);		
+		assertThat(newDirection).isInstanceOf(South.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeEastWhenSouthAndTurnLeft(){
+	public void directionShouldBeEastWhenSouthAndTurnLeft() {
 		Direction direction = new South(coordinate);
 		Direction newDirection = direction.turnLeft();
-		assertThat(newDirection).isInstanceOf(East.class);		
+		assertThat(newDirection).isInstanceOf(East.class);
 	}
-	
+
 	@Test
-	public void directionShouldBeNorthWhenEastAndTurnLeft(){
+	public void directionShouldBeNorthWhenEastAndTurnLeft() {
 		Direction direction = new East(coordinate);
 		Direction newDirection = direction.turnLeft();
-		assertThat(newDirection).isInstanceOf(North.class);		
+		assertThat(newDirection).isInstanceOf(North.class);
 	}
-	
+
 	@Test
-	public void directionShouldIncrementXWhenEastAndMoveForward(){
+	public void directionShouldIncrementXWhenEastAndMoveForward() {
 		Direction direction = new East(coordinate);
 		direction.moveForward();
-		assertThat(coordinate.getX()).isEqualTo(1);		
+		assertThat(coordinate.getX()).isEqualTo(1);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
-	
+
 	@Test
-	public void directionShoulddecrementXWhenEastAndMoveBackward(){
+	public void directionShoulddecrementXWhenEastAndMoveBackward() {
 		Direction direction = new East(coordinate);
 		direction.moveForward();
 		direction.moveBackward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
-	
+
 	@Test
-	public void directionShouldIncrementYWhenNorthAndMoveForward(){
+	public void directionShouldIncrementYWhenNorthAndMoveForward() {
 		Direction direction = new North(coordinate);
 		direction.moveForward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(1);
 	}
-	
+
 	@Test
-	public void directionShouldDecrementYWhenNorthAndMoveBackward(){
+	public void directionShouldDecrementYWhenNorthAndMoveBackward() {
 		Direction direction = new North(coordinate);
 		direction.moveForward();
 		direction.moveBackward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
-	
+
 	@Test
-	public void directionShouldIncrementYWhenSouthAndMoveBackward(){
+	public void directionShouldIncrementYWhenSouthAndMoveBackward() {
 		Direction direction = new South(coordinate);
 		direction.moveBackward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(1);
 	}
-	
+
 	@Test
-	public void directionShouldDecrementYWhenSouthAndMoveForward(){
+	public void directionShouldDecrementYWhenSouthAndMoveForward() {
 		Direction direction = new South(coordinate);
 		direction.moveForward();
 		direction.moveBackward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
-	
+
 	@Test
-	public void directionShouldIncrementXWhenWestAndMoveBackward(){
+	public void directionShouldIncrementXWhenWestAndMoveBackward() {
 		Direction direction = new West(coordinate);
 		direction.moveBackward();
-		assertThat(coordinate.getX()).isEqualTo(1);		
+		assertThat(coordinate.getX()).isEqualTo(1);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
-	
+
 	@Test
-	public void directionShouldDecrementXWhenWestAndMoveForward(){
+	public void directionShouldDecrementXWhenWestAndMoveForward() {
 		Direction direction = new West(coordinate);
 		direction.moveForward();
 		direction.moveBackward();
-		assertThat(coordinate.getX()).isEqualTo(0);		
+		assertThat(coordinate.getX()).isEqualTo(0);
 		assertThat(coordinate.getY()).isEqualTo(0);
 	}
 }

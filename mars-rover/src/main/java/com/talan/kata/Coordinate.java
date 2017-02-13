@@ -1,6 +1,5 @@
 package com.talan.kata;
 
-import java.util.function.Predicate;
 
 public interface Coordinate {
 
@@ -13,9 +12,9 @@ public interface Coordinate {
 	public boolean moveBackwardX();
 
 	public boolean moveForwardY();
-	
+
 	public boolean moveBackwardY();
-	
+
 	public String report();
 
 }
