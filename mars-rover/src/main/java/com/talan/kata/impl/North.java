@@ -23,8 +23,8 @@ public class North implements Direction {
 		return coordinate.moveForwardY();		
 	}
 
-	public void moveBackward() {
-		coordinate.moveBackwardY();		
+	public boolean moveBackward() {
+		return coordinate.moveBackwardY();		
 	}
 	
 	public Coordinate getCoordinate() {

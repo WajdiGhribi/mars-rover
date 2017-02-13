@@ -22,8 +22,8 @@ public class South implements Direction {
 		return coordinate.moveBackwardY();		
 	}
 
-	public void moveBackward() {
-		coordinate.moveForwardY();	
+	public boolean moveBackward() {
+		return coordinate.moveForwardY();	
 	}
 
 	public Coordinate getCoordinate() {

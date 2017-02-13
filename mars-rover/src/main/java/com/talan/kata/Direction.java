@@ -10,7 +10,7 @@ public interface Direction {
 
 	public boolean moveForward();
 
-	public void moveBackward();
+	public boolean moveBackward();
 
 	public Coordinate getCoordinate();
 

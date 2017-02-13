@@ -17,8 +17,10 @@ public class Rover {
 					if(!Forward())
 						break;
 				}
-				else if (cmd == 'b')
-					BackWard();
+				else if (cmd == 'b'){
+					if(!BackWard())
+						break;
+				}
 				else if (cmd == 'l')
 					turnLeft();
 				else if (cmd == 'r')
@@ -37,8 +39,8 @@ public class Rover {
 		
 	}
 
-	private void BackWard() {
-		direction.moveBackward();
+	private boolean BackWard() {
+		return direction.moveBackward();
 		
 	}
 

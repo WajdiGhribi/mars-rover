@@ -23,8 +23,8 @@ public class West implements Direction {
 		return coordinate.moveBackwardX();		
 	}
 
-	public void moveBackward() {
-		coordinate.moveForwardX();
+	public boolean moveBackward() {
+		return coordinate.moveForwardX();
 	}
 
 	public Coordinate getCoordinate() {

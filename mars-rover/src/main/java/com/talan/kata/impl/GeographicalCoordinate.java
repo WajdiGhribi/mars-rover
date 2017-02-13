@@ -10,7 +10,7 @@ public class GeographicalCoordinate implements Coordinate {
 	private int x;
 	private int y;
 	private Surface surface;
-	private boolean obstacleDetected;
+	private boolean clearToGo = true;
 	
 	public GeographicalCoordinate(int x, int y, Surface surface) {
 		this.x = x;
@@ -31,19 +31,21 @@ public class GeographicalCoordinate implements Coordinate {
 		if(x < surface.getSize())
 			destination = x + 1;
 		setX(destination);
-		return obstacleDetected;
+		return clearToGo;
 	}
 
 	public void setX(int destination) {
 		if(!surface.isCollision(destination , y))
 			this.x = destination;
 		else
-			obstacleDetected = true;
+			clearToGo = false;
 	}
 
 	public void setY(int destination) {
 		if(!surface.isCollision(x , destination))
 			this.y = destination;
+		else
+			clearToGo = false;
 	}
 
 	public boolean moveBackwardX() {
@@ -51,7 +53,7 @@ public class GeographicalCoordinate implements Coordinate {
 		if(x > 0)
 			destination = x - 1;
 		setX(destination);
-		return obstacleDetected;
+		return clearToGo;
 	}
 
 	public boolean moveForwardY() {
@@ -59,7 +61,7 @@ public class GeographicalCoordinate implements Coordinate {
 		if(y < surface.getSize())
 			destination = y + 1;
 		setY(destination);
-		return obstacleDetected;
+		return clearToGo;
 		
 	}
 
@@ -68,7 +70,7 @@ public class GeographicalCoordinate implements Coordinate {
 		if(y > 0)
 			destination = y - 1;
 		setY(destination);
-		return obstacleDetected;
+		return clearToGo;
 	}
 	
 }

@@ -8,6 +8,7 @@ import com.talan.kata.impl.GeographicalCoordinate;
 import com.talan.kata.impl.MarsSurface;
 import com.talan.kata.impl.North;
 import com.talan.kata.impl.Obstacle;
+import com.talan.kata.impl.South;
 import com.talan.kata.impl.West;
 
 import static org.assertj.core.api.Assertions.*;
@@ -84,8 +85,19 @@ public class RoverTest {
 		Rover rover = new Rover(initialDirection);
 		rover.execute("ffrf");
 		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
-		assertThat(actualCoordinate).isEqualToComparingFieldByFieldRecursively(expectedCoordinate);
+		assertThat(actualCoordinate).isEqualToIgnoringGivenFields(expectedCoordinate, "clearToGo");
 		assertThat(rover.getDirection()).isInstanceOf(North.class);
 	}
 	
+	@Test
+	public void roverShouldNotMoveAndMaintainDirectionAndCoordinateWhenMoveBackwardAndDetectObstacle(){
+		obstacles.add(new Obstacle(0 , 1));
+		surface.setObstacles(obstacles);
+		Coordinate expectedCoordinate = new GeographicalCoordinate(0, 0, surface);
+		Rover rover = new Rover(initialDirection);
+		rover.execute("llb");
+		Coordinate actualCoordinate = rover.getDirection().getCoordinate();
+		assertThat(actualCoordinate).isEqualToIgnoringGivenFields(expectedCoordinate, "clearToGo");
+		assertThat(rover.getDirection()).isInstanceOf(South.class);
+	}
 }

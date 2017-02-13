@@ -28,8 +28,8 @@ public class East implements Direction {
 		
 	}
 
-	public void moveBackward() {
-		coordinate.moveBackwardX();		
+	public boolean moveBackward() {
+		return coordinate.moveBackwardX();		
 	}
 
 }
