@@ -4,7 +4,7 @@
 
   <groupId>com.talan.kata</groupId>
   <artifactId>mars-rover</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>mars-rover</name>
